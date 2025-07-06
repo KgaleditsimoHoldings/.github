@@ -151,19 +151,28 @@ section h2 {
   color: #002f5f;
 }
 
-/* Divisions Section */
+/* Divisions Section – updated */
 #divisions {
   background: #f9f9f9;
   padding: 80px 20px;
 }
-.divisions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-  gap: 30px;
+#divisions h2 {
+  color: #002f5f;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2em;
+}
+.container.divisions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 .division-card {
+  flex: 0 0 300px;       /* fixed width per card */
+  box-sizing: border-box;
   background: #fff;
   padding: 30px;
   border-radius: 12px;
