@@ -54,7 +54,7 @@ nav .nav-menu a:hover {
 
 /* Hero Section */
 header.hero {
-  background: url('hero.png') no-repeat center/cover;
+  background: url('../../hero.png') no-repeat center/cover;
   height: 80vh;
   display: flex;
   align-items: center;
