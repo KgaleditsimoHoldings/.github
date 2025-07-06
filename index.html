@@ -7,30 +7,28 @@
   <style>
     /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #fff; background: #000; padding-top: 60px; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; background: #fafafa; padding-top: 60px; line-height: 1.6; }
     a { text-decoration: none; }
+    h2 { margin-bottom: 16px; color: #0366d6; }
 
     /* Navigation */
     nav {
-      position: fixed; top: -60px; left: 0; right: 0;
-      background: linear-gradient(90deg, rgba(3,54,102,0.9), rgba(2,76,156,0.9));
+      position: fixed; top: 0; left: 0; right: 0;
+      background: #e0e0e0;
       display: flex; align-items: center; padding: 10px 20px;
-      animation: slideDown 0.8s forwards ease-out;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       z-index: 100;
     }
     nav .nav-logo {
       height: 40px; margin-right: 20px;
     }
     nav a {
-      margin-right: 20px; color: #fff; font-weight: 600;
-      transition: background 0.3s;
+      margin-right: 20px; color: #0ff; font-weight: 600;
       padding: 6px 10px; border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
     }
     nav a:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    @keyframes slideDown {
-      to { top: 0; }
+      background: #0ff; color: #000;
     }
 
     /* Hero Section */
@@ -38,20 +36,17 @@
       background: url('hero.png') no-repeat center/cover;
       height: 80vh; display: flex; align-items: center;
       justify-content: center; position: relative;
+      color: #fff; text-align: center;
       animation: fadeIn 2s ease-in;
     }
     header.hero::after {
       content: ''; position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.4);
     }
     .hero .content {
-      position: relative; text-align: center;
-      max-width: 700px; z-index: 1;
+      position: relative; max-width: 700px; z-index: 1;
       animation: fadeInDown 1.2s ease-out;
-    }
-    .hero .content img {
-      max-width: 180px; margin-bottom: 20px;
     }
     .hero .content h1 {
       font-size: 3em; color: #0ff;
@@ -70,63 +65,53 @@
     }
     .hero .content .btn:hover { background: #0dd; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes glow {
-      from { text-shadow: 0 0 8px #0ff; }
-      to { text-shadow: 0 0 20px #0ff; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes glow { from { text-shadow: 0 0 8px #0ff; } to { text-shadow: 0 0 20px #0ff; } }
 
     /* Section Styles */
     section { padding: 60px 20px; }
-    section h2 { text-align: center; margin-bottom: 40px; font-size: 2em; }
+    section .container { max-width: 1000px; margin: 0 auto; }
+
+    /* Vision & Mission */
+    #vision { background: #fff; }
+    #vision .items { display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
+    .vision-item { flex: 1 1 300px; background: #e8f4ff; padding: 20px; border-radius: 8px; text-align: center; }
+    .vision-item img { width: 60px; margin-bottom: 12px; }
 
     /* Divisions Section */
-    #divisions { background: #111; }
+    #divisions { background: #f0f0f0; }
     .divisions { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-    .division-card {
-      background: rgba(255,255,255,0.1); width: 280px;
-      padding: 24px; border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      text-align: center; color: #fff;
-      animation: slideUp 0.8s ease-out;
-    }
-    .division-card img { max-width: 80px; margin-bottom: 16px; }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .division-card { background: #fff; width: 300px; padding: 24px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: left; }
+    .division-card img { max-width: 80px; float: right; opacity: 0.8; }
 
-    /* Brands Section */
-    #brands { background: #000; }
-    .brand-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
-    .brand-logos img { width: 100px; transition: transform 0.3s; }
-    .brand-logos img:hover { transform: scale(1.1); }
+    /* Products Section */
+    #brands { background: #fff; }
+    #brands h2 { color: #0366d6; }
+    .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 20px; }
+    .product-card { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .product-card img { max-width: 100%; margin-bottom: 12px; }
 
     /* Features Section */
-    #features { background: #111; }
-    #features .container { max-width: 800px; margin: 0 auto; text-align: left; }
+    #features { background: #f0f0f0; }
+    .features { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .feature-item { background: #fff; padding: 20px; border-radius: 8px; width: 220px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .feature-item img { width: 50px; margin-bottom: 10px; }
 
     /* Roadmap Section */
-    #roadmap { background: #000; }
-    #roadmap ol { max-width: 600px; margin: 0 auto; padding-left: 20px; text-align: left; }
+    #roadmap { background: #fff; }
+    .roadmap { list-style: none; counter-reset: step; max-width: 600px; margin: 0 auto; }
+    .roadmap li { counter-increment: step; position: relative; padding-left: 60px; margin-bottom: 30px; }
+    .roadmap li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: #0366d6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .roadmap li img { position: absolute; left: -60px; top: 0; width: 40px; }
 
     /* Contact Section */
-    #contact { background: #111; }
+    #contact { background: #f0f0f0; }
     #contact p { text-align: center; }
 
     /* Footer */
-    footer { background: #000; text-align: center; padding: 20px; font-size: 0.9em; color: #aaa; }
+    footer { background: #e0e0e0; text-align: center; padding: 20px; font-size: 0.9em; color: #555; }
   </style>
 </head>
 <body>
@@ -135,7 +120,7 @@
     <a href="#hero">Home</a>
     <a href="#vision">Vision</a>
     <a href="#divisions">Divisions</a>
-    <a href="#brands">Brands</a>
+    <a href="#brands">Products</a>
     <a href="#features">Features</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#contact">Contact</a>
@@ -143,7 +128,6 @@
 
   <header id="hero" class="hero">
     <div class="content">
-      <img src="Kgaleditsimo Holding logo.png" alt="Kgaleditsimo Holdings Logo" />
       <h1>Empowering Minds, Building Futures</h1>
       <p>AI-driven EdTech · Civil Engineering · Environmental &amp; Safety Solutions</p>
       <a href="#divisions" class="btn">Explore Our Divisions</a>
@@ -152,82 +136,93 @@
 
   <section id="vision">
     <h2>Vision &amp; Mission</h2>
-    <div class="container">
-      <p><strong>Vision:</strong> To be the leading technology-driven holding company in Southern Africa, creating impactful solutions that bridge education, infrastructure, and environmental stewardship.</p>
-      <p><strong>Mission:</strong></p>
-      <ul>
-        <li>Innovate at the intersection of AI and applied engineering.</li>
-        <li>Elevate learning experiences through immersive EdTech platforms.</li>
-        <li>Deliver precision in construction and surveying services.</li>
-        <li>Ensure environmental compliance and safety excellence with data-driven systems.</li>
-      </ul>
+    <div class="items container">
+      <div class="vision-item">
+        <img src="icon-vision.png" alt="Vision Icon" />
+        <h3>Our Vision</h3>
+        <p>To be the leading technology-driven holding company in Southern Africa, creating impactful solutions.</p>
+      </div>
+      <div class="vision-item">
+        <img src="icon-mission.png" alt="Mission Icon" />
+        <h3>Our Mission</h3>
+        <p>Innovate at the intersection of AI and engineering while ensuring excellence in education and compliance.</p>
+      </div>
     </div>
   </section>
 
   <section id="divisions">
     <h2>Our Divisions</h2>
-    <div class="divisions">
+    <div class="divisions container">
       <div class="division-card">
-        <img src="Kgaleditsimo EdTech Logo.png" alt="Kgaleditsimo EdTech Logo" />
-        <h3>EdTech</h3>
-        <p>AI-powered learning platforms and interactive tutorials for STEM education.</p>
+        <h3>EdTech <img src="Kgaleditsimo EdTech Logo.png" alt="EdTech Logo" /></h3>
+        <p>Developing interactive AI-driven learning platforms and tutorials to elevate STEM education.</p>
       </div>
       <div class="division-card">
-        <img src="Kgaleditsimo Civils Logo.png" alt="Kgaleditsimo Civils Logo" />
-        <h3>Civils</h3>
-        <p>Civil engineering, quantity surveying, site safety, and infrastructure solutions.</p>
+        <h3>Civils <img src="Kgaleditsimo Civils Logo.png" alt="Civils Logo" /></h3>
+        <p>Providing quantity surveying, BOQ automation, and site safety solutions for infrastructure projects.</p>
       </div>
       <div class="division-card">
-        <img src="Kgaleditsimo EnviroSafe Logo.png" alt="Kgaleditsimo EnviroSafe Logo" />
-        <h3>EnviroSafe</h3>
-        <p>Environmental management, safety compliance, and risk assessment tools.</p>
+        <h3>EnviroSafe <img src="Kgaleditsimo EnviroSafe Logo.png" alt="EnviroSafe Logo" /></h3>
+        <p>Engineering environmental compliance tools, risk assessments, and incident management systems.</p>
       </div>
     </div>
   </section>
 
   <section id="brands">
-    <h2>Our Brands</h2>
-    <div class="brand-logos">
-      <img src="Kgaleditsimo EdTech Logo.png" alt="EdTech Brand Logo" />
-      <img src="Kgaleditsimo Civils Logo.png" alt="Civils Brand Logo" />
-      <img src="Kgaleditsimo EnviroSafe Logo.png" alt="EnviroSafe Brand Logo" />
+    <h2>Our Products</h2>
+    <div class="product-list container">
+      <div class="product-card">
+        <img src="ChemAI-Tutor.png" alt="ChemAI Tutor" />
+        <h3>ChemAI Tutor</h3>
+        <p>An AI-powered chemistry tutor with reaction animations, smart lab report generation, and adaptive quizzes.</p>
+      </div>
+      <div class="product-card">
+        <img src="QualiAI.png" alt="QualiAI" />
+        <h3>QualiAI</h3>
+        <p>A quality management platform automating QCP creation, BOQ generation, and compliance tracking.</p>
+      </div>
+      <div class="product-card">
+        <img src="SafeAI.png" alt="SafeAI" />
+        <h3>SafeAI</h3>
+        <p>An environmental and safety management system drafting risk assessments and managing incident workflows.</p>
+      </div>
+      <div class="product-card">
+        <img src="MathAI-Solver.png" alt="MathAI Solver" />
+        <h3>MathAI Solver</h3>
+        <p>A step-by-step mathematics solver with symbolic computation and dynamic visualizations.</p>
+      </div>
     </div>
   </section>
 
   <section id="features">
     <h2>Key Features</h2>
-    <div class="container">
-      <h3>EdTech</h3>
-      <ul>
-        <li>Adaptive Learning Engines</li>
-        <li>Interactive Visualizations</li>
-        <li>Smart Report Assistants</li>
-        <li>Quiz & Assessment Modules</li>
-      </ul>
-      <h3>Civils</h3>
-      <ul>
-        <li>Automated BOQ Generation</li>
-        <li>Quality Control Plans</li>
-        <li>Site Safety Inspections</li>
-        <li>Cost & Change Management</li>
-      </ul>
-      <h3>EnviroSafe</h3>
-      <ul>
-        <li>Risk Assessment Drafting</li>
-        <li>Incident Reporting</li>
-        <li>Environmental Monitoring</li>
-        <li>Compliance Tracking</li>
-      </ul>
+    <div class="features container">
+      <div class="feature-item">
+        <img src="icon-adaptive.png" alt="Adaptive Learning" />
+        <p>Adaptive Learning Engines</p>
+      </div>
+      <div class="feature-item">
+        <img src="icon-visuals.png" alt="Interactive Visualizations" />
+        <p>Interactive Visualizations</p>
+      </div>
+      <div class="feature-item">
+        <img src="icon-reports.png" alt="Smart Reports" />
+        <p>Smart Report Assistants</p>
+      </div>
+      <div class="feature-item">
+        <img src="icon-quiz.png" alt="Quizzes" />
+        <p>Quiz & Assessment Modules</p>
+      </div>
     </div>
   </section>
 
   <section id="roadmap">
     <h2>Roadmap &amp; Growth</h2>
-    <ol>
-      <li>Modular API Gateway</li>
-      <li>Native Mobile Apps</li>
-      <li>Cloud SaaS Deployment</li>
-      <li>AI Research Lab Expansion</li>
+    <ol class="roadmap container">
+      <li><img src="icon-api.png" alt="API Gateway" /> Modular API Gateway</li>
+      <li><img src="icon-mobile.png" alt="Mobile Apps" /> Native Mobile Apps</li>
+      <li><img src="icon-cloud.png" alt="Cloud SaaS" /> Cloud SaaS Deployment</li>
+      <li><img src="icon-lab.png" alt="AI Lab" /> AI Research Lab Expansion</li>
     </ol>
   </section>
 
