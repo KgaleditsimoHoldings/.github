@@ -125,7 +125,7 @@ section h2 {
   color: #002f5f;
 }
 
-/* Vision & Mission – Darker Background */
+/* Vision & Mission – Dark background with white cards */
 #vision {
   background: #2c3e50;
   padding: 80px 20px;
@@ -142,17 +142,18 @@ section h2 {
   margin: 0 auto;
 }
 .vision-item {
-  background: rgba(255, 255, 255, 0.1);
-  color: #eee;
+  background: #fff;
+  color: #333;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   max-width: 450px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .vision-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 .vision-item img {
   width: 60px;
@@ -160,7 +161,7 @@ section h2 {
 }
 .vision-item h3 {
   margin-bottom: 12px;
-  color: #0ff;
+  color: #002f5f;
 }
 .vision-item p {
   line-height: 1.5;
