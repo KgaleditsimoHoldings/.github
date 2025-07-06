@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kgaleditsimo Holding Pty (Ltd)</title>
+  <style>
+    /* Base styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { margin-bottom: 16px; }
+    section { padding: 60px 20px; }
+
+    /* Hero Section */
+    .hero {
+      background: url('hero.jpg') no-repeat center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s ease-in;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero .content {
+      position: relative;
+      max-width: 700px;
+      z-index: 1;
+    }
+    .hero h1 { font-size: 3em; margin-bottom: 0.5em; }
+    .hero p { font-size: 1.2em; margin-bottom: 1em; }
+    .hero .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #0366d6;
+      color: #fff;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .hero .btn:hover { background: #024c9c; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Divisions Section */
+    #divisions { background: #f9f9f9; }
+    #divisions h2 { text-align: center; margin-bottom: 40px; }
+    .divisions { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+    .division-card {
+      background: #fff;
+      width: 300px;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: slideUp 0.8s ease-out;
+    }
+    .division-card img { max-width: 80px; margin-bottom: 16px; }
+    .division-card h3 { margin-bottom: 12px; }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Brands Section */
+    #brands { text-align: center; }
+    #brands h2 { margin-bottom: 40px; }
+    .brand-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .brand-logos img { width: 100px; transition: transform 0.3s; }
+    .brand-logos img:hover { transform: scale(1.1); }
+
+    /* General Content Sections */
+    #vision ul, #features ul { margin-left: 20px; list-style-type: disc; }
+    #features h3 { margin-top: 24px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; background: #fff; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10; }
+    nav a { margin: 0 15px; font-weight: bold; color: #0366d6; }
+    body { padding-top: 60px; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #f1f1f1; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#vision">Vision</a>
+    <a href="#divisions">Divisions</a>
+    <a href="#brands">Brands</a>
+    <a href="#features">Features</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="hero" class="hero">
+    <div class="content">
+      <img src="logo.png" alt="Kgaleditsimo Holdings Logo" width="180" />
+      <h1>Empowering Minds, Building Futures</h1>
+      <p>AI-driven EdTech · Civil Engineering · Environmental &amp; Safety Solutions</p>
+      <a href="#divisions" class="btn">Explore Our Divisions</a>
+    </div>
+  </header>
+
+  <section id="vision">
+    <h2>Vision &amp; Mission</h2>
+    <p><strong>Vision:</strong> To be the leading technology-driven holding company in Southern Africa, creating impactful solutions that bridge education, infrastructure, and environmental stewardship.</p>
+    <p><strong>Mission:</strong></p>
+    <ul>
+      <li>Innovate at the intersection of AI and applied engineering.</li>
+      <li>Elevate learning experiences through immersive EdTech platforms.</li>
+      <li>Deliver precision in construction and surveying services.</li>
+      <li>Ensure environmental compliance and safety excellence with data-driven systems.</li>
+    </ul>
+  </section>
+
+  <section id="divisions">
+    <h2>Our Divisions</h2>
+    <div class="divisions">
+      <div class="division-card">
+        <img src="edtech-logo.png" alt="EdTech Logo" />
+        <h3>EdTech</h3>
+        <p>AI-powered learning platforms and interactive tutorials for STEM education.</p>
+      </div>
+      <div class="division-card">
+        <img src="civils-logo.png" alt="Civils Logo" />
+        <h3>Civils</h3>
+        <p>Civil engineering, quantity surveying, site safety, and infrastructure solutions.</p>
+      </div>
+      <div class="division-card">
+        <img src="enviro-logo.png" alt="EnviroSafe Logo" />
+        <h3>EnviroSafe</h3>
+        <p>Environmental management, safety compliance, and risk assessment tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands">
+    <h2>Our Brands</h2>
+    <div class="brand-logos">
+      <img src="edtech-logo.png" alt="EdTech Brand Logo" />
+      <img src="civils-logo.png" alt="Civils Brand Logo" />
+      <img src="enviro-logo.png" alt="EnviroSafe Brand Logo" />
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Key Features</h2>
+    <h3>EdTech</h3>
+    <ul>
+      <li>Adaptive Learning Engines</li>
+      <li>Interactive Visualizations</li>
+      <li>Smart Report Assistants</li>
+      <li>Quiz & Assessment Modules</li>
+    </ul>
+    <h3>Civils</h3>
+    <ul>
+      <li>Automated BOQ Generation</li>
+      <li>Quality Control Plans</li>
+      <li>Site Safety Inspections</li>
+      <li>Cost & Change Management</li>
+    </ul>
+    <h3>EnviroSafe</h3>
+    <ul>
+      <li>Risk Assessment Drafting</li>
+      <li>Incident Reporting</li>
+      <li>Environmental Monitoring</li>
+      <li>Compliance Tracking</li>
+    </ul>
+  </section>
+
+  <section id="roadmap">
+    <h2>Roadmap &amp; Growth</h2>
+    <ol>
+      <li>Modular API Gateway</li>
+      <li>Native Mobile Apps</li>
+      <li>Cloud SaaS Deployment</li>
+      <li>AI Research Lab Expansion</li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p><strong>Headquarters:</strong> Johannesburg, South Africa</p>
+    <p><strong>Emails:</strong> m.k.nkoana17@gmail.com | katlego@kgaleditsimo.co.za</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kgaleditsimo Holding Pty (Ltd). All rights reserved.</p>
+  </footer>
+</body>
+</html>
