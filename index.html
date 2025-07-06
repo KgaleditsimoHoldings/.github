@@ -5,94 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kgaleditsimo Holding Pty (Ltd)</title>
   <style>
-    /* Base styles */
+    /* Reset & Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    h1, h2, h3 { margin-bottom: 16px; }
-    section { padding: 60px 20px; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #fff; background: #000; padding-top: 60px; }
+    a { text-decoration: none; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: -60px; left: 0; right: 0;
+      background: linear-gradient(90deg, rgba(3,54,102,0.9), rgba(2,76,156,0.9));
+      display: flex; align-items: center; padding: 10px 20px;
+      animation: slideDown 0.8s forwards ease-out;
+      z-index: 100;
+    }
+    nav .nav-logo {
+      height: 40px; margin-right: 20px;
+    }
+    nav a {
+      margin-right: 20px; color: #fff; font-weight: 600;
+      transition: background 0.3s;
+      padding: 6px 10px; border-radius: 4px;
+    }
+    nav a:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    @keyframes slideDown {
+      to { top: 0; }
+    }
 
     /* Hero Section */
-    .hero {
+    header.hero {
       background: url('hero.png') no-repeat center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      position: relative;
+      height: 80vh; display: flex; align-items: center;
+      justify-content: center; position: relative;
       animation: fadeIn 2s ease-in;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
+    header.hero::after {
+      content: ''; position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.6);
     }
     .hero .content {
-      position: relative;
-      max-width: 700px;
-      z-index: 1;
+      position: relative; text-align: center;
+      max-width: 700px; z-index: 1;
+      animation: fadeInDown 1.2s ease-out;
     }
-    .hero h1 { font-size: 3em; margin-bottom: 0.5em; }
-    .hero p { font-size: 1.2em; margin-bottom: 1em; }
-    .hero .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #0366d6;
-      color: #fff;
-      border-radius: 4px;
-      transition: background 0.3s;
+    .hero .content img {
+      max-width: 180px; margin-bottom: 20px;
     }
-    .hero .btn:hover { background: #024c9c; }
+    .hero .content h1 {
+      font-size: 3em; color: #0ff;
+      text-shadow: 0 0 8px #0ff;
+      animation: glow 2s infinite alternate;
+    }
+    .hero .content p {
+      font-size: 1.2em; margin: 20px 0;
+      animation: fadeInUp 1.5s ease-out;
+    }
+    .hero .content .btn {
+      display: inline-block; padding: 12px 24px;
+      background: #0ff; color: #000; font-weight: bold;
+      border-radius: 4px; transition: background 0.3s;
+      animation: fadeInUp 1.8s ease-out;
+    }
+    .hero .content .btn:hover { background: #0dd; }
 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 8px #0ff; }
+      to { text-shadow: 0 0 20px #0ff; }
+    }
+
+    /* Section Styles */
+    section { padding: 60px 20px; }
+    section h2 { text-align: center; margin-bottom: 40px; font-size: 2em; }
 
     /* Divisions Section */
-    #divisions { background: #f9f9f9; }
-    #divisions h2 { text-align: center; margin-bottom: 40px; }
-    .divisions { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; }
+    #divisions { background: #111; }
+    .divisions { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .division-card {
-      background: #fff;
-      width: 300px;
-      padding: 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
+      background: rgba(255,255,255,0.1); width: 280px;
+      padding: 24px; border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      text-align: center; color: #fff;
       animation: slideUp 0.8s ease-out;
     }
     .division-card img { max-width: 80px; margin-bottom: 16px; }
-    .division-card h3 { margin-bottom: 12px; }
-
     @keyframes slideUp {
-      from { transform: translateY(20px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Brands Section */
-    #brands { text-align: center; }
-    #brands h2 { margin-bottom: 40px; }
+    #brands { background: #000; }
     .brand-logos { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; }
     .brand-logos img { width: 100px; transition: transform 0.3s; }
     .brand-logos img:hover { transform: scale(1.1); }
 
-    /* General Content Sections */
-    #vision ul, #features ul { margin-left: 20px; list-style-type: disc; }
-    #features h3 { margin-top: 24px; }
-    nav { position: fixed; top: 0; left: 0; right: 0; background: #fff; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 10; }
-    nav a { margin: 0 15px; font-weight: bold; color: #0366d6; }
-    body { padding-top: 60px; }
+    /* Features Section */
+    #features { background: #111; }
+    #features .container { max-width: 800px; margin: 0 auto; text-align: left; }
+
+    /* Roadmap Section */
+    #roadmap { background: #000; }
+    #roadmap ol { max-width: 600px; margin: 0 auto; padding-left: 20px; text-align: left; }
+
+    /* Contact Section */
+    #contact { background: #111; }
+    #contact p { text-align: center; }
 
     /* Footer */
-    footer { text-align: center; padding: 20px; background: #f1f1f1; font-size: 0.9em; }
+    footer { background: #000; text-align: center; padding: 20px; font-size: 0.9em; color: #aaa; }
   </style>
 </head>
 <body>
   <nav>
+    <img src="Kgaleditsimo Holding logo.png" alt="Logo" class="nav-logo" />
     <a href="#hero">Home</a>
     <a href="#vision">Vision</a>
     <a href="#divisions">Divisions</a>
@@ -104,7 +143,7 @@
 
   <header id="hero" class="hero">
     <div class="content">
-      <img src="Kgaleditsimo Holding logo.png" alt="Kgaleditsimo Holdings Logo" width="180" />
+      <img src="Kgaleditsimo Holding logo.png" alt="Kgaleditsimo Holdings Logo" />
       <h1>Empowering Minds, Building Futures</h1>
       <p>AI-driven EdTech · Civil Engineering · Environmental &amp; Safety Solutions</p>
       <a href="#divisions" class="btn">Explore Our Divisions</a>
@@ -113,14 +152,16 @@
 
   <section id="vision">
     <h2>Vision &amp; Mission</h2>
-    <p><strong>Vision:</strong> To be the leading technology-driven holding company in Southern Africa, creating impactful solutions that bridge education, infrastructure, and environmental stewardship.</p>
-    <p><strong>Mission:</strong></p>
-    <ul>
-      <li>Innovate at the intersection of AI and applied engineering.</li>
-      <li>Elevate learning experiences through immersive EdTech platforms.</li>
-      <li>Deliver precision in construction and surveying services.</li>
-      <li>Ensure environmental compliance and safety excellence with data-driven systems.</li>
-    </ul>
+    <div class="container">
+      <p><strong>Vision:</strong> To be the leading technology-driven holding company in Southern Africa, creating impactful solutions that bridge education, infrastructure, and environmental stewardship.</p>
+      <p><strong>Mission:</strong></p>
+      <ul>
+        <li>Innovate at the intersection of AI and applied engineering.</li>
+        <li>Elevate learning experiences through immersive EdTech platforms.</li>
+        <li>Deliver precision in construction and surveying services.</li>
+        <li>Ensure environmental compliance and safety excellence with data-driven systems.</li>
+      </ul>
+    </div>
   </section>
 
   <section id="divisions">
@@ -155,27 +196,29 @@
 
   <section id="features">
     <h2>Key Features</h2>
-    <h3>EdTech</h3>
-    <ul>
-      <li>Adaptive Learning Engines</li>
-      <li>Interactive Visualizations</li>
-      <li>Smart Report Assistants</li>
-      <li>Quiz & Assessment Modules</li>
-    </ul>
-    <h3>Civils</h3>
-    <ul>
-      <li>Automated BOQ Generation</li>
-      <li>Quality Control Plans</li>
-      <li>Site Safety Inspections</li>
-      <li>Cost & Change Management</li>
-    </ul>
-    <h3>EnviroSafe</h3>
-    <ul>
-      <li>Risk Assessment Drafting</li>
-      <li>Incident Reporting</li>
-      <li>Environmental Monitoring</li>
-      <li>Compliance Tracking</li>
-    </ul>
+    <div class="container">
+      <h3>EdTech</h3>
+      <ul>
+        <li>Adaptive Learning Engines</li>
+        <li>Interactive Visualizations</li>
+        <li>Smart Report Assistants</li>
+        <li>Quiz & Assessment Modules</li>
+      </ul>
+      <h3>Civils</h3>
+      <ul>
+        <li>Automated BOQ Generation</li>
+        <li>Quality Control Plans</li>
+        <li>Site Safety Inspections</li>
+        <li>Cost & Change Management</li>
+      </ul>
+      <h3>EnviroSafe</h3>
+      <ul>
+        <li>Risk Assessment Drafting</li>
+        <li>Incident Reporting</li>
+        <li>Environmental Monitoring</li>
+        <li>Compliance Tracking</li>
+      </ul>
+    </div>
   </section>
 
   <section id="roadmap">
