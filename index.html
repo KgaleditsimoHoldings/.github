@@ -9,19 +9,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Segoe UI', Tahoma, sans-serif; color: #333; background: #fafafa; padding-top: 60px; line-height: 1.6; }
     a { text-decoration: none; }
-    h2 { margin-bottom: 16px; color: #0366d6; }
+    h2 { margin-bottom: 16px; color: #002f5f; }
 
     /* Navigation */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
-      background: #e0e0e0;
+      background: #002f5f;
       display: flex; align-items: center; padding: 10px 20px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       z-index: 100;
     }
-    nav .nav-logo {
-      height: 40px; margin-right: 20px;
-    }
+    nav .nav-logo { height: 40px; margin-right: 20px; }
     nav a {
       margin-right: 20px; color: #0ff; font-weight: 600;
       padding: 6px 10px; border-radius: 4px;
@@ -35,8 +33,7 @@
     header.hero {
       background: url('hero.png') no-repeat center/cover;
       height: 80vh; display: flex; align-items: center;
-      justify-content: center; position: relative;
-      color: #fff; text-align: center;
+      justify-content: center; position: relative; text-align: center;
       animation: fadeIn 2s ease-in;
     }
     header.hero::after {
@@ -88,7 +85,7 @@
 
     /* Products Section */
     #brands { background: #fff; }
-    #brands h2 { color: #0366d6; }
+    #brands h2 { color: #002f5f; }
     .product-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 20px; }
     .product-card { background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
     .product-card img { max-width: 100%; margin-bottom: 12px; }
@@ -103,7 +100,7 @@
     #roadmap { background: #fff; }
     .roadmap { list-style: none; counter-reset: step; max-width: 600px; margin: 0 auto; }
     .roadmap li { counter-increment: step; position: relative; padding-left: 60px; margin-bottom: 30px; }
-    .roadmap li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: #0366d6; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+    .roadmap li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 40px; height: 40px; background: #002f5f; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
     .roadmap li img { position: absolute; left: -60px; top: 0; width: 40px; }
 
     /* Contact Section */
@@ -140,12 +137,12 @@
       <div class="vision-item">
         <img src="icon-vision.png" alt="Vision Icon" />
         <h3>Our Vision</h3>
-        <p>To be the leading technology-driven holding company in Southern Africa, creating impactful solutions.</p>
+        <p>To be the leading technology-driven holding company in Southern Africa, creating impactful solutions that bridge education, infrastructure, and environmental stewardship. We strive to uplift communities by providing accessible, intelligent platforms that foster learning and innovation.</p>
       </div>
       <div class="vision-item">
         <img src="icon-mission.png" alt="Mission Icon" />
         <h3>Our Mission</h3>
-        <p>Innovate at the intersection of AI and engineering while ensuring excellence in education and compliance.</p>
+        <p>Innovate at the intersection of AI and engineering while ensuring excellence in education and compliance. We deliver precision engineering services, dynamic learning tools, and robust safety systems designed to empower professionals and students alike.</p>
       </div>
     </div>
   </section>
@@ -177,9 +174,29 @@
         <p>An AI-powered chemistry tutor with reaction animations, smart lab report generation, and adaptive quizzes.</p>
       </div>
       <div class="product-card">
+        <img src="MathAI-Solver.png" alt="MathAI Solver" />
+        <h3>MathAI Solver</h3>
+        <p>A step-by-step mathematics solver with symbolic computation and dynamic visualizations.</p>
+      </div>
+      <div class="product-card">
+        <img src="ComputerScienceAI.png" alt="ComputerScienceAI" />
+        <h3>ComputerScienceAI</h3>
+        <p>Interactive tutor for computer science fundamentals, including syntax checking and automata simulation.</p>
+      </div>
+      <div class="product-card">
         <img src="QualiAI.png" alt="QualiAI" />
         <h3>QualiAI</h3>
         <p>A quality management platform automating QCP creation, BOQ generation, and compliance tracking.</p>
+      </div>
+      <div class="product-card">
+        <img src="BOQ-Generator.png" alt="BOQ Generator" />
+        <h3>BOQ Generator</h3>
+        <p>Automates bill of quantities extraction directly from CAD drawings, ensuring precision and speed.</p>
+      </div>
+      <div class="product-card">
+        <img src="SiteSafe-CAD.png" alt="SiteSafe CAD" />
+        <h3>SiteSafe CAD</h3>
+        <p>Mobile-friendly site safety inspection tool with photo documentation and audit logging.</p>
       </div>
       <div class="product-card">
         <img src="SafeAI.png" alt="SafeAI" />
@@ -187,9 +204,14 @@
         <p>An environmental and safety management system drafting risk assessments and managing incident workflows.</p>
       </div>
       <div class="product-card">
-        <img src="MathAI-Solver.png" alt="MathAI Solver" />
-        <h3>MathAI Solver</h3>
-        <p>A step-by-step mathematics solver with symbolic computation and dynamic visualizations.</p>
+        <img src="EcoMonitor.png" alt="EcoMonitor" />
+        <h3>EcoMonitor</h3>
+        <p>Real-time environmental monitoring dashboard with sensor data analytics and alerts.</p>
+      </div>
+      <div class="product-card">
+        <img src="ComplianceTracker.png" alt="ComplianceTracker" />
+        <h3>ComplianceTracker</h3>
+        <p>Automated regulatory compliance alerts and reporting for safety and environmental standards.</p>
       </div>
     </div>
   </section>
@@ -197,32 +219,24 @@
   <section id="features">
     <h2>Key Features</h2>
     <div class="features container">
-      <div class="feature-item">
-        <img src="icon-adaptive.png" alt="Adaptive Learning" />
-        <p>Adaptive Learning Engines</p>
-      </div>
-      <div class="feature-item">
-        <img src="icon-visuals.png" alt="Interactive Visualizations" />
-        <p>Interactive Visualizations</p>
-      </div>
-      <div class="feature-item">
-        <img src="icon-reports.png" alt="Smart Reports" />
-        <p>Smart Report Assistants</p>
-      </div>
-      <div class="feature-item">
-        <img src="icon-quiz.png" alt="Quizzes" />
-        <p>Quiz & Assessment Modules</p>
-      </div>
+      <div class="feature-item"><img src="icon-adaptive.png" alt="Adaptive Learning" /><p>Adaptive Learning Engines</p></div>
+      <div class="feature-item"><img src="icon-visuals.png" alt="Interactive Visualizations" /><p>Interactive Visualizations</p></div>
+      <div class="feature-item"><img src="icon-reports.png" alt="Smart Reports" /><p>Smart Report Assistants</p></div>
+      <div class="feature-item"><img src="icon-quiz.png" alt="Quizzes" /><p>Quiz & Assessment Modules</p></div>
+      <div class="feature-item"><img src="icon-boq.png" alt="BOQ Automation" /><p>Automated BOQ Generation</p></div>
+      <div class="feature-item"><img src="icon-safety.png" alt="Site Safety" /><p>Mobile Site Safety Inspections</p></div>
+      <div class="feature-item"><img src="icon-monitor.png" alt="Environmental Monitoring" /><p>Environmental Monitoring Dashboards</p></div>
+      <div class="feature-item"><img src="icon-compliance.png" alt="Compliance Alerts" /><p>Automated Compliance Alerts</p></div>
     </div>
   </section>
 
   <section id="roadmap">
     <h2>Roadmap &amp; Growth</h2>
     <ol class="roadmap container">
-      <li><img src="icon-api.png" alt="API Gateway" /> Modular API Gateway</li>
-      <li><img src="icon-mobile.png" alt="Mobile Apps" /> Native Mobile Apps</li>
-      <li><img src="icon-cloud.png" alt="Cloud SaaS" /> Cloud SaaS Deployment</li>
-      <li><img src="icon-lab.png" alt="AI Lab" /> AI Research Lab Expansion</li>
+      <li><img src="icon-api.png" alt="API Gateway" /> Modular API Gateway & Integration Layer</li>
+      <li><img src="icon-mobile.png" alt="Mobile Apps" /> Native Mobile Apps for Field Operations</li>
+      <li><img src="icon-cloud.png" alt="Cloud SaaS" /> Scalable Cloud SaaS Deployment</li>
+      <li><img src="icon-lab.png" alt="AI Lab" /> Dedicated AI Research & Development Lab</li>
     </ol>
   </section>
 
